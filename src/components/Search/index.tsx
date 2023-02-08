@@ -1,4 +1,4 @@
-import { SearchIcon } from './SearchIcon'
+import { SearchIcon } from '../Icons/SearchIcon'
 
 import styles from './Search.module.css'
 

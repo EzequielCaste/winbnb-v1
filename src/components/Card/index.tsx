@@ -1,0 +1,56 @@
+interface Props {
+  stay: {
+    city: string
+    country: string
+    superHost: boolean
+    title: string
+    rating: number
+    maxGuests: number
+    type: string
+    beds: number
+    photo: string
+  }
+}
+
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
+import { Star } from '../Icons/Star'
+import styles from './Card.module.css'
+
+const Card: React.FC<Props> = ({ stay }) => {
+  return (
+    <div className={styles['card-container']}>
+      <LazyLoadImage
+      alt="Photo of the stay"
+      height={269}
+      src={stay.photo} 
+      effect='blur'
+      width={395} />
+      <div className={styles['card-details-container']}>
+        {
+          stay.superHost && <SuperHost />
+        }
+        <span className={styles['card-details']}>
+          {stay.type} {' . '} {stay.beds}
+        </span>
+        <div className={styles['rating']}>
+          <Star style={{fill: '#EB5757'}} />
+          <span>{stay.rating.toFixed(2)}</span>  
+        </div>
+        
+      </div>
+      <div></div>
+      
+    </div>
+  )
+}
+
+function SuperHost() {
+  return (
+    <span className={styles['superhost']}>
+      super host
+    </span>
+  )
+}
+
+export default Card

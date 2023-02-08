@@ -8,7 +8,6 @@ const Header = () => {
     <header>
       <div className={styles["header"]}>
         <img src={logo} alt="Windbnb logo" />
-        {/* Search */}
         <Search />
       </div>
     </header>
