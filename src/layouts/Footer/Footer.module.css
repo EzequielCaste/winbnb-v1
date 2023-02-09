@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 100px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #828282;
+}
+
+.footer-link {
+  font-weight: 700;
+}
