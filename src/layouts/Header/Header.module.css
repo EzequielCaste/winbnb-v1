@@ -2,5 +2,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 61px;
+}
+.header-expanded {
+  justify-content: flex-end;
+}
+.header-drawer {
+  transition: width 4s linear, height 4s linear ;
+  width: 297px;
+  height: 55px;
+  position: absolute;
+  right: 96px;
+  top: 32px;
+  background-color: white;
+}
+.header-drawer-expanded {
+  width: 100vw;
+  height: 460px;
+  right: 0;
+  top: 0;
 }

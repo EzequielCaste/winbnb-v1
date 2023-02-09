@@ -4,10 +4,6 @@
 html {
   font-size: 18px;
 }
-.container {
-  margin: 32px 96px;
-}
-
 main span,
 main section,
 footer {
@@ -18,4 +14,8 @@ a,
 a:active,
 a:visited {
   color: #828282;
+}
+
+.container {
+  margin: 32px 96px;
 }

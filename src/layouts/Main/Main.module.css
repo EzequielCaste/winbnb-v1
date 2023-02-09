@@ -3,6 +3,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 36px;
+  margin-top: 61px;
 }
 .title {
   font-weight: 700;
