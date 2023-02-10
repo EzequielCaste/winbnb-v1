@@ -5,6 +5,8 @@ import LocationInput from './LocationInput'
 
 import styles from './Search.module.css'
 
+import {cities} from '../../cities'
+
 function changeBackground() {
   const documentBody = document.querySelector('body')!
 
@@ -49,8 +51,6 @@ const Search = () => {
     toggleOptions()
   }
 
-  
-
   function toggleOptions() {
     const optionsList = document.getElementById('options')
     if (optionsList?.style.display === 'none') {
@@ -63,10 +63,10 @@ const Search = () => {
   return (
     <div /* onClick={expandSearch} */ className={containerStyle}>
       <div className={drawerStyle}>
-        <LocationInput 
-          expand={expand} 
-          currentLocation={currentLocation} 
-          toggleOptions={toggleOptions} 
+        <LocationInput
+          expand={expand}
+          currentLocation={currentLocation}
+          toggleOptions={toggleOptions}
         />
         <GuestsInput expand={expand} />
         <div className={buttonStyle}>
@@ -75,12 +75,44 @@ const Search = () => {
         </div>
       </div>
 
-      <ul id='options' style={{display: 'none'}}>
-        <li onClick={changeLocation}>Helsinki, Finland</li>
-        <li onClick={changeLocation}>Turku, Finland</li>
-        <li onClick={changeLocation}>Oulu, Finland</li>
-        <li onClick={changeLocation}>Vaasa, Finland</li>
-      </ul>
+      <div className={styles['option-container']}>
+        <ul
+          className={styles['location-list']}
+          id="options"
+          style={{display: 'none'}}
+        >
+          {cities.map((city, index) => {
+            return (
+              <li key={index} onClick={changeLocation}>
+                {city}
+              </li>
+            )
+          })}
+        </ul>
+
+        {/* guests */}
+
+        <div className={styles['guest-options']}>
+          <div className={styles['guest-adults']}>
+            <strong>Adults</strong>
+            <span>Ages 13 or above</span>
+            <div className={styles['guest-input']}>
+              <div>-</div>
+              <span>0</span>
+              <div>+</div>
+            </div>
+          </div>
+          <div className={styles['guest-children']}>
+            <strong>Children</strong>
+            <span>Ages 2-12</span>
+            <div className={styles['guest-input']}>
+              <div>-</div>
+              <span>0</span>
+              <div>+</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

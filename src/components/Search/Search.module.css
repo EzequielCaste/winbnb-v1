@@ -57,19 +57,22 @@
   margin-top: 93px;
 }
 
-ul {
+.location-list {
   list-style: none;
   padding: 0;
+  margin:0;
   margin-left: 96px;
-  margin-top: 50px;
+  width: fit-content;
+  display: inline-block !important;
 }
-li {
+.location-list li {
   cursor: pointer;
   display: flex;
-  margin: 0.75rem 0;
   font-size: 14px;
+  margin-bottom: 36px;
 }
-li::before {
+
+.location-list li::before {
   content: '';
   opacity: 0.7;
   background-image: url('/map-marker-alt-solid.svg');
@@ -83,4 +86,47 @@ li::before {
 
 .hide {
   display: none;
+}
+.guest-options {
+  display: inline-block;
+  margin-left: 312px;
+}
+.guest-adults,
+.guest-children {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 52px;
+}
+.guest-adults span,
+.guest-children span {
+  color: #bdbdbd;
+}
+.guest-options div strong {
+  font-size: 17px;
+}
+
+.guest-input {
+  display: flex;
+  margin-top: 12px;
+  align-items: center;
+}
+.guest-input div { 
+  width: 23px;
+  height: 23px;
+  border: 1px solid #828282;
+  color: #828282;
+  border-radius: 4px;
+  place-content: center;
+  display: flex;
+}
+.guest-input span {
+  font-weight: 700;
+  font-size: 14px;
+  color: #333333;
+  margin: 0 15px;
+}
+
+.option-container {
+  display: flex;
+  padding-top: 48px;
 }
