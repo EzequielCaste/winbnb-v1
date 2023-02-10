@@ -1,6 +1,12 @@
 import styles from './LocationInput.module.css'
 
-const LocationInput: React.FC<{expand: boolean}> = ({expand}) => {
+interface Props {
+  expand: boolean
+  currentLocation: string
+  toggleOptions: () => void
+}
+
+const LocationInput: React.FC<Props> = ({expand, toggleOptions, currentLocation}) => {
   const location = {
     label: '',
     input: ''
@@ -24,10 +30,13 @@ const LocationInput: React.FC<{expand: boolean}> = ({expand}) => {
       </label>
       
       <input
+        onClick={toggleOptions}
+        id='location-input'
+        autoComplete="off"
         name="location"
         type="text"
         className={inputStyle}
-        placeholder="Helsinki, Finland"
+        placeholder={currentLocation}
       />
     </>
   )

@@ -56,3 +56,31 @@
   height: 55px;
   margin-top: 93px;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-left: 96px;
+  margin-top: 50px;
+}
+li {
+  cursor: pointer;
+  display: flex;
+  margin: 0.75rem 0;
+  font-size: 14px;
+}
+li::before {
+  content: '';
+  opacity: 0.7;
+  background-image: url('/map-marker-alt-solid.svg');
+  background-size: fill;
+  background-repeat: no-repeat;
+  height: 16px;
+  width: 16px;
+  display: block;
+  margin-right: 8px;
+}
+
+.hide {
+  display: none;
+}
