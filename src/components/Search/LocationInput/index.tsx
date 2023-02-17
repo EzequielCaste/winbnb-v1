@@ -36,7 +36,8 @@ const LocationInput: React.FC<Props> = ({expand, toggleOptions, currentLocation}
         name="location"
         type="text"
         className={inputStyle}
-        placeholder={currentLocation}
+        readOnly
+        value={currentLocation ? currentLocation : 'Add location'}
       />
     </>
   )

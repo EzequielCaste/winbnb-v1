@@ -20,7 +20,7 @@ const Main: React.FC<Props> = ({ stays }) => {
     <>
       <div className={styles['title-container']}>
         <span className={styles['title']}>Stays in Finland</span>
-        <span className={styles['subtitle']}>12+ stays</span>
+        <span className={styles['subtitle']}>{stays.length} stays</span>
       </div>
       <section className={styles['stays-container']}>
         {stays.map((stay) => (

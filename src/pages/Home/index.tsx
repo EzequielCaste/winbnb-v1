@@ -8,7 +8,7 @@ import Search from '../../components/Search'
 import stays from '../../stays.json'
 
 const Home = () => {
-  const [currentLocation, setCurrentLocation] = useState('Helsinki, Finland')
+  const [currentLocation, setCurrentLocation] = useState('')
 
   const [currentGuests, setCurrentGuests] = useState({
     adults: 0,
