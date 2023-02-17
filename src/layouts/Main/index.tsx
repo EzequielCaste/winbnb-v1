@@ -1,10 +1,21 @@
 import Card from '../../components/Card'
-import stays from '../../stays.json'
 import styles from './Main.module.css'
 
-const staysToDisplay = stays.slice(0, 6)
+interface Props {
+  stays: {
+    city: string
+    country: string
+    superHost: boolean
+    title: string
+    rating: number
+    maxGuests: number
+    type: string
+    beds: number | null
+    photo: string
+  }[]
+}
 
-const Main = () => {
+const Main: React.FC<Props> = ({ stays }) => {
   return (
     <>
       <div className={styles['title-container']}>
@@ -12,7 +23,7 @@ const Main = () => {
         <span className={styles['subtitle']}>12+ stays</span>
       </div>
       <section className={styles['stays-container']}>
-        {staysToDisplay.map((stay) => (
+        {stays.map((stay) => (
           <Card key={stay.title} stay={stay} />
         ))}
       </section>

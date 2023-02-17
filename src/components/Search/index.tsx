@@ -17,16 +17,19 @@ function changeBackground() {
   }
 }
 
-const Search = () => {
+interface Props {
+  currentLocation: string
+  currentGuests: { adults: number; children: number; }
+  setCurrentLocation: React.Dispatch<React.SetStateAction<string>>
+  setCurrentGuests: React.Dispatch<React.SetStateAction<{
+    adults: number;
+    children: number;
+}>>
+}
+
+const Search: React.FC<Props> = ({currentGuests, currentLocation, setCurrentGuests, setCurrentLocation}) => {
   const [expand, setExpand] = useState(false)
-  const [currentLocation, setCurrentLocation] = useState('Helsinki, Finland')
-
-  const [currentGuests, setCurrentGuests] = useState({
-    adults: 0,
-    children: 0
-  })
-
-  
+    
   function expandSearch() {
     if (!expand) {
       setExpand((state) => !state)
