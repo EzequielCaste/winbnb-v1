@@ -2,10 +2,10 @@ import {useState} from 'react'
 import {SearchIcon} from '../Icons/SearchIcon'
 import GuestsInput from './GuestsInput'
 import LocationInput from './LocationInput'
+import OptionsContainer from './OptionsContainer'
 
 import styles from './Search.module.css'
 
-import {cities} from '../../cities'
 
 function changeBackground() {
   const documentBody = document.querySelector('body')!
@@ -18,11 +18,24 @@ function changeBackground() {
 }
 
 const Search = () => {
-  const [expand, setExpand] = useState(true)
+  const [expand, setExpand] = useState(false)
   const [currentLocation, setCurrentLocation] = useState('Helsinki, Finland')
 
+  const [currentGuests, setCurrentGuests] = useState({
+    adults: 0,
+    children: 0
+  })
+
+  
   function expandSearch() {
-    setExpand((state) => !state)
+    if (!expand) {
+      setExpand((state) => !state)
+      changeBackground()
+    }   
+  }
+
+  function handleSearch() {
+    setExpand(false)
     changeBackground()
   }
 
@@ -61,58 +74,31 @@ const Search = () => {
   }
 
   return (
-    <div /* onClick={expandSearch} */ className={containerStyle}>
+    <div onClick={expandSearch} className={containerStyle}>
       <div className={drawerStyle}>
         <LocationInput
           expand={expand}
           currentLocation={currentLocation}
           toggleOptions={toggleOptions}
         />
-        <GuestsInput expand={expand} />
-        <div className={buttonStyle}>
-          <SearchIcon style={svgFill} />
+        <GuestsInput 
+          expand={expand} 
+          guests={currentGuests} 
+          handleGuests={setCurrentGuests} 
+        />
+        <div onClick={handleSearch} className={buttonStyle}>
+          <SearchIcon
+            style={svgFill} 
+          />
           {expand && <span>Search</span>}
         </div>
       </div>
-
-      <div className={styles['option-container']}>
-        <ul
-          className={styles['location-list']}
-          id="options"
-          style={{display: 'none'}}
-        >
-          {cities.map((city, index) => {
-            return (
-              <li key={index} onClick={changeLocation}>
-                {city}
-              </li>
-            )
-          })}
-        </ul>
-
-        {/* guests */}
-
-        <div className={styles['guest-options']}>
-          <div className={styles['guest-adults']}>
-            <strong>Adults</strong>
-            <span>Ages 13 or above</span>
-            <div className={styles['guest-input']}>
-              <div>-</div>
-              <span>0</span>
-              <div>+</div>
-            </div>
-          </div>
-          <div className={styles['guest-children']}>
-            <strong>Children</strong>
-            <span>Ages 2-12</span>
-            <div className={styles['guest-input']}>
-              <div>-</div>
-              <span>0</span>
-              <div>+</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <OptionsContainer 
+        expand={expand}
+        currentGuests={currentGuests}
+        setCurrentGuests={setCurrentGuests}
+        changeLocation={changeLocation} 
+      />
     </div>
   )
 }

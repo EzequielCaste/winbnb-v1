@@ -1,6 +1,18 @@
 import styles from './GuestsInput.module.css'
 
-const GuestsInput: React.FC<{expand: boolean}> = ({expand}) => {
+interface Props {
+  expand: boolean
+  guests: {
+    adults: number
+    children: number
+  }
+  handleGuests: React.Dispatch<React.SetStateAction<{
+    adults: number;
+    children: number;
+}>>
+}
+
+const GuestsInput: React.FC<Props> = ({expand, guests: numGuests, handleGuests}) => {
   const guests = {
     label: '',
     input: '',
@@ -17,6 +29,19 @@ const GuestsInput: React.FC<{expand: boolean}> = ({expand}) => {
 
   const inputStyle = `${styles['input-guests']} ${styles[guests.input]}`
 
+  function handleChange(e: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
+    console.log(e)
+  }
+
+  const numberOfGuests = numGuests.adults + numGuests.children
+
+  let inputValue = `${numberOfGuests}  guests`
+
+  if (numberOfGuests === 0) {
+    inputValue = 'Add guests'
+  }
+
+
   return (
     <div className={styles['guests-container']}>
       <label className={labelStyle} htmlFor="guests">
@@ -24,9 +49,9 @@ const GuestsInput: React.FC<{expand: boolean}> = ({expand}) => {
       </label>
 
       <input
-        min={0}
-        type="number"
-        placeholder="Add guest"
+        value={inputValue}
+        onChange={handleChange}
+        type="text"
         className={inputStyle}
         name="guests"
       />

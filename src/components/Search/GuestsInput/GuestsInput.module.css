@@ -28,6 +28,7 @@
 .input-guests:focus {
   border: 0;
   outline: none;
+  color: #333;
 }
 .expanded {
   padding-top: 10px;

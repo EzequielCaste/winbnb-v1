@@ -1,0 +1,25 @@
+.guest-input {
+  display: flex;
+  margin-top: 12px;
+  align-items: center;
+}
+.guest-input div { 
+  cursor: pointer;
+  width: 23px;
+  height: 23px;
+  border: 1px solid #828282;
+  color: #828282;
+  border-radius: 4px;
+  place-content: center;
+  display: flex;
+}
+.guest-input div:hover {
+  color: black;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+} 
+.guest-input span {
+  font-weight: 700;
+  font-size: 14px;
+  color: #333333;
+  margin: 0 15px;
+}
