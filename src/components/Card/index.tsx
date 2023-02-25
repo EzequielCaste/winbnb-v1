@@ -13,6 +13,7 @@ interface Props {
 }
 
 import {LazyLoadImage} from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import {Star} from '../Icons/Star'
 import styles from './Card.module.css'
@@ -25,7 +26,7 @@ const Card: React.FC<Props> = ({stay}) => {
         height={269}
         src={stay.photo}
         effect="blur"
-        width={395}
+        /* width={395} */
       />
       <div className={styles['card-details-container']}>
         {/* <SuperHost showHost={stay.superHost} /> */}

@@ -55,3 +55,22 @@
 .expanded {
   display: flex;
 }
+
+@media screen and (max-width: 480px) {
+  .option-container {
+    padding-top: 25px;
+  }
+  .location-list {
+    margin-left: 49px;
+    width: max-content;
+  }
+  .location-list li {
+    width: inherit;
+  }
+  .guest-options {
+    margin-left: 25px;
+  }
+  .guest-adults {
+    margin-bottom: 32px;
+  }
+}

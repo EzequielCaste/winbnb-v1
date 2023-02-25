@@ -23,3 +23,16 @@
   gap: 32px;
   max-width: 1249px;
 }
+@media screen and (max-width: 480px) {
+  .stays-container {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+  .title {
+    font-size: 18px;
+  }
+  .title-container {
+    margin-top: 135px;
+    margin-bottom: 24px;
+  }
+}

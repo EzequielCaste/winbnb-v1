@@ -41,3 +41,13 @@
 .hide {
   display: none;
 }
+@media screen and (max-width: 480px) {
+  .expanded {
+    width: 350px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .input-location {
+    height: 55px;
+  }
+}

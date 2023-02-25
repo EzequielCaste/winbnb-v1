@@ -56,3 +56,24 @@
   height: 55px;
   margin-top: 93px;
 }
+
+@media screen and (max-width: 480px) {
+  .search_container {
+    right: 32px;
+    top: 75px;
+  }
+  .expanded {
+    right: 0;
+    top: 0;
+    height: 90vh;
+  }
+  .drawer-expanded {
+    width: 350px;
+    height: auto;
+    margin-top:49px;
+    flex-direction: column;
+  }
+  .search-icon-expanded {
+    margin: 16px 0;
+  }
+}
