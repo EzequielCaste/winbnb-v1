@@ -59,6 +59,15 @@
   .card-container span  {
     width: 100%;
     object-fit: cover;
+  }  
+}
+@media screen and (min-width: 481px) {
+  .card-container {
+    width: 344px;
   }
-  
+  .card-container img,
+  .card-container span  {
+    width: 100%;
+    object-fit: cover;
+  }  
 }
