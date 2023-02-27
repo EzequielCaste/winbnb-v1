@@ -37,7 +37,7 @@
 
 ## Overview
 
-![screenshot](https://i.imgur.com/wt8Devw.gif)
+![screenshot](https://github.com/EzequielCaste/winbnb-v1/blob/main/public/WindBnB.gif)
 
 The demo for the solution to this challenge is hosted on Vercel. I used CSS Grid and Media Queries to make the page responsive for Mobile, Tablet and Desktop sizes.
 
