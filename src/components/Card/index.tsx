@@ -22,11 +22,11 @@ const Card: React.FC<Props> = ({stay}) => {
   return (
     <div className={styles['card-container']}>
       <LazyLoadImage
+        className={styles['card-image']}
         alt="Photo of the stay"
         height={269}
         src={stay.photo}
         effect="blur"
-        /* width={395} */
       />
       <div className={styles['card-details-container']}>
         {/* <SuperHost showHost={stay.superHost} /> */}

@@ -7,8 +7,9 @@
 }
 
 .superhost {
+  width: 88px!important;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 15px;
   text-transform: uppercase;
   color: #4f4f4f;
@@ -16,6 +17,14 @@
   border-radius: 12px;
   padding: 7px 9px;
   margin-right: 11px;
+  text-align: center;
+}
+.card-container span:nth-of-type(1) {
+  width: 100%;
+  object-fit: cover;
+}
+.card-image {
+  width: 100%;
 }
 .card-details-container {
   display: flex;
@@ -55,19 +64,9 @@
   .card-container {
     width: 350px;
   }
-  .card-container img,
-  .card-container span  {
-    width: 100%;
-    object-fit: cover;
-  }  
 }
 @media screen and (min-width: 481px) {
   .card-container {
     width: 344px;
   }
-  .card-container img,
-  .card-container span  {
-    width: 100%;
-    object-fit: cover;
-  }  
 }
