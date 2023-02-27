@@ -74,3 +74,19 @@
     margin-bottom: 32px;
   }
 }
+@media screen and (min-width: 700px) {
+  .location-list {
+    margin-left: 124px;
+  }
+  .guest-options {
+    margin-left: 75px;
+  }
+  .guest-adults {
+    margin-bottom: 32px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .guest-options {
+    margin-left: 200px;
+  }
+}

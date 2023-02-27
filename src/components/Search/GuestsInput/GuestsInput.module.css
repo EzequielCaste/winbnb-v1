@@ -56,3 +56,19 @@
     border-top-right-radius: 0;
   }
 }
+@media screen and (min-width: 700px) {
+  .guests-container {
+    width: 200px;
+  }
+  .expanded {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .expanded {
+    border-radius: 16px;
+  }
+  .guests-container {
+    width: 320px;
+  }
+}

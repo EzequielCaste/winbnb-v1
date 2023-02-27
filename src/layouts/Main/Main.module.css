@@ -19,9 +19,10 @@
 }
 .stays-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr; */
   gap: 32px;
   max-width: 1249px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 480px) {
   .stays-container {
@@ -39,5 +40,10 @@
 @media screen and (min-width: 481px) {
   .stays-container {
     grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 800px) {
+  .stays-container {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

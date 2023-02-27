@@ -77,3 +77,13 @@
     margin: 16px 0;
   }
 }
+@media screen and (min-width: 700px) {
+  .drawer-expanded {
+    width: 70vw;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .drawer-expanded {
+    width: 84vw;
+  }
+}
